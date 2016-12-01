@@ -1,0 +1,19 @@
+<div ng-if="ver==true">	 
+	<form id="frm" name="frm">
+		<center>
+
+			Descripcion: <input type="text" name="descripcion" ng-model="of.descripcion" disabled><br><br>
+			Precio: $<input type="number" name="precio" ng-model="of.precio" disabled><br><br>
+			Sucursal:
+			 <select ng-model="SucElegida" disabled>
+			 <option ng-repeat="s in Lsucursales" value={{s.nombre}}>{{s.nombre}}</option>
+			</select><br><br>  
+			<input type="button" class="btn btn-default" ng-click="ElimO()" style="color:black" name="elim" value="Eliminar" > 
+			<input type="button" class="btn btn-default" ng-click="Volver()" style="color:black" name="Volver" value="Volver" ><br><br>
+
+		</center>
+	</form>
+</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

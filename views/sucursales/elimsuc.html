@@ -1,0 +1,21 @@
+<div ng-if="ver==true">
+      <form id="frm" name="frm">
+      	<center>
+      		Nombre:<input type="text" name="nombre" ng-model="sucursal.nombre" disabled><br><br>
+      		Direccion: <input type="text" name="direccion" ng-model="sucursal.direccion" disabled><br><br>      
+       
+            <img src="{{foto1}}" width="50" height="50">
+            <img src="{{foto2}}" width="50" height="50">
+            <img src="{{foto3}}" width="50" height="50"> <br><br>
+            <!-- SUBIR IMAGEN AIXA-->
+           
+            <button  name="Eliminar" class="btn btn-default"  ng-click="Eliminar()"  ></span>Eliminar</a></button> <!-- ng-disabled="FormIngreso.$invalid"  -->
+
+            <input type="button" class="btn btn-default" ng-click="Volver()" style="color:black" name="Volver" value="Volver" ><br><br>
+      	</center>
+      </form>
+ 
+</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

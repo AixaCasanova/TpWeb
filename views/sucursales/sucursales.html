@@ -1,0 +1,34 @@
+
+<div  ng-if="esAdmin">
+	<div ng-if="ver==true">
+		
+	 
+	  		<input type="button" class="btn btn-default" ui-sref="AltaSuc" style="color:black" name="AltaSuc" value="Nueva sucursal"><br><br>	 
+	  	<div ui-grid="gridOptionsSucurs" class="myGrid"></div>
+	 	<br><br>
+	 </div>
+</div>	
+
+<div  ng-if="!esAdmin">
+	<div ng-if="ver==true">
+		<h3>Sucursales</h3>
+	 
+	  	<div ui-grid="gridOptionsSucursNoAdm" class="myGrid"></div>
+	 	<br><br>
+	 </div>
+</div>	
+
+<div ng-if="ver!=true" id="divlogin"><h1>Se debe loguear!!</h1></div>
+
+
+
+
+
+
+ 	<div ng-if="verOfer==true" id="divlogin">
+ 		<center>
+ 		<div ui-grid="gridOptionsOfr"></div>
+ 		</center>
+ 	</div>
+ 	
+ 

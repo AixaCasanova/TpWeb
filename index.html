@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+	  <title>Pizza</title>
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+      <link href="./bower_components/bootstrap/css/business-casual.css" rel="stylesheet">
+      <link href="./bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+      <link href="./bower_components/angular-ui-grid/ui-grid.min.css" rel="stylesheet" type="text/css" >
+      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+      <style type="text/css">body {font-family: 'Patrick Hand', cursive;}</style>
+      <!--<script src="bower_components/angular/angular.js"></script>-->
+
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/bootstrap/js/jquery.js"></script>
+      <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+      
+      
+      <script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/pdfmake/build/pdfmake.min.js"></script>
+      <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+      <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+      <script src="bower_components/satellizer/dist/satellizer.min.js"></script>
+      <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB66wK7sRitJxtcy4UsB4fHeZP5lom4WXY"></script>
+   </head>
+   <body ng-app="app">
+      <div class="brand">Pizzerias Argenta</div>
+      <div class="address-bar" ng-if="SeVe"> {{userAVer}} </div>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+               <a class="navbar-brand" href="index.html">Pizzerias Argenta</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li><a ui-sref="Principal">Inicio</a></li>
+                  <li><a ui-sref="login">login</a></li>
+                  <li><a ng-if="esAdmin && SeVe" ui-sref="usuarios">usuarios</a></li>
+                  <li><a ng-if="SeVe" ui-sref="sucursales">sucursales</a></li>
+                  <li><a  ng-if="(esEnc && !esAdmin) && SeVe" ui-sref="empleados">empleados</a></li>
+                  <li><a ng-if="(esVend && !esAdmin) && SeVe" ui-sref="clientes">clientes</a></li>
+                  <li><a  ng-if="esAdmin  && SeVe" ui-sref="encargados">encargados</a></li>
+                  <li><a  ng-if="esAdmin  && SeVe" ui-sref="estadisticas">estadisticas</a></li>
+                  <li><a ng-if="SeVe" ui-sref="productos">productos</a></li>
+                  <li><a ng-if="SeVe" ui-sref="ofertas">ofertas</a></li>
+                  <li><a ng-if="SeVe" ui-sref="MisPedidos">pedidos</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div class="container" ui-view></div>
+      <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                  <p>Copyright &copy; Aixa Casanova 2016</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+
+
+      <script src="scripts/app.js"></script>
+      <!-- services -->
+
+      <script src="scripts/services/filtros.js"></script>
+
+      <script src="scripts/services/login/factorybddlogin.js"></script>
+      <script src="scripts/services/login/servloginbase.js"></script>
+      <script src="scripts/services/login/servlogin.js"></script> 
+      <script src="scripts/services/usuarios/servusuario.js"></script> 
+      <script src="scripts/services/usuarios/servusuariobase.js"></script> 
+      <script src="scripts/services/usuarios/factory_bdd.js"></script> 
+      <script src="scripts/services/ofertas/servoferta.js"></script> 
+      <script src="scripts/services/ofertas/servofertabase.js"></script> 
+      <script src="scripts/services/ofertas/factorybddoferta.js"></script>
+      <script src="scripts/services/productos/servproducto.js"></script> 
+      <script src="scripts/services/productos/servproductobase.js"></script> 
+      <script src="scripts/services/productos/factorybddproducto.js"></script>
+      <script src="scripts/services/empleados/servempleado.js"></script> 
+      <script src="scripts/services/empleados/servempleadobase.js"></script> 
+      <script src="scripts/services/empleados/factorybddempleado.js"></script> 
+      <script src="scripts/services/cliente/servcliente.js"></script> 
+      <script src="scripts/services/cliente/servclientebase.js"></script> 
+      <script src="scripts/services/cliente/factorybddcliente.js"></script>
+      <script src="scripts/services/encargados/servencargado.js"></script> 
+      <script src="scripts/services/encargados/servencargadobase.js"></script> 
+      <script src="scripts/services/encargados/factorybddencargado.js"></script> 
+      <script src="scripts/services/pedidos/servpedido.js"></script> 
+      <script src="scripts/services/pedidos/servpedidobase.js"></script> 
+      <script src="scripts/services/pedidos/factorybddpedido.js"></script> 
+      <script src="scripts/services/sucursales/servsucursales.js"></script> 
+      <script src="scripts/services/sucursales/servsucursalesbase.js"></script> 
+      <script src="scripts/services/sucursales/factorybddsucursales.js"></script> 
+      <!-- controllers -->
+      <script src="scripts/controllers/conf.js"></script>
+      <script src="scripts/controllers/ctrollogin.js"></script>
+      <script src="scripts/controllers/ngthumb.js"></script>
+      <script src="scripts/controllers/ctrolusuario.js"></script>
+      <script src="scripts/controllers/ctrolofertas.js"></script>
+      <script src="scripts/controllers/ctrolproductos.js"></script>
+      <script src="scripts/controllers/ctrolempleados.js"></script>
+      <script src="scripts/controllers/ctrolclientes.js"></script>
+      <script src="scripts/controllers/ctrolencargados.js"></script>
+      <script src="scripts/controllers/ctrolpedidos.js"></script>
+      <script src="scripts/controllers/ctrolsucursales.js"></script>
+      <script src="scripts/controllers/ctrolestadisticasyencuestas.js"></script>
+
+      <script src="scripts/directives/directivas.js"></script>
+
+      <!-- Script to Activate the Carousel -->
+      <script>
+         $('.carousel').carousel({
+             interval: 1000 //changes the speed
+         })
+      </script>
+   </body>
+</html>					

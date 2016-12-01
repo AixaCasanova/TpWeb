@@ -1,0 +1,34 @@
+ <div ng-if="ver==true"> 
+	<h3>Mis pedidos</h3>
+	<div ng-if="ver==true">
+	<input type="button" class="btn btn-default" ui-sref="pedidos" name="pedir" value="Hacer Un pedidos"  ><br><br>
+	<div ui-grid="gridOptionsMisPedidos" class="myGrid"></div><br><br> 
+   	
+   	<div ng-if="veoGrilla">
+   	 <h3>Detalle del pedido:</h3><br><br>
+   	<div ui-grid="gridOptionsMisProdPedidos" class="myGrid"></div></div>
+
+
+	<div ng-if="esEnc || esAdmin">
+	   	<h3>Todos los pedidos</h3>
+
+		<div ui-grid="gridOptionsTodosPedidos" class="myGrid" 
+	ui-grid-pagination
+    ui-grid-resize-columns
+    ui-grid-selection
+    ui-grid-exporter></div><br><br> 
+	   	
+	   	<div ng-if="veoGrilla2">
+	   	<h3>Detalle del pedido:</h3><br><br>
+	   	<div ui-grid="gridOptionsMisProdPedidos2" class="myGrid"
+	   		ui-grid-pagination
+    		ui-grid-resize-columns
+    		ui-grid-selection
+		    ui-grid-exporter></div></div>
+
+	</div>
+	</div>	<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

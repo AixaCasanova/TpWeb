@@ -1,0 +1,16 @@
+<div ng-if="ver==true"> 
+	<form id="frm" name="frm">
+		<center>
+
+			Descripcion: <input type="text" name="descripcion" ng-model="producto.descripcion" disabled><br><br>
+			Precio: <input type="number" name="precio" ng-model="producto.precio" disabled><br><br>
+			<input type="button" class="btn btn-default" ng-click="EliminarP()" style="color:black" name="EliminarP" value="Eliminar" > 
+			<input type="button" class="btn btn-default" ng-click="Volver()" style="color:black" name="Volver" value="Volver" ><br><br>
+
+		</center>
+	</form>
+	 
+</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

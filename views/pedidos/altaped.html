@@ -1,0 +1,16 @@
+<div ng-if="ver==true">	 
+	<form id="frm" name="frm">
+		<center>
+
+		<h1>Productos a elegir</h1>
+
+		<div ui-grid="gridOptionsProd" class="myGrid"></div>
+			<input type="button" class="btn btn-default" ng-click="AltaP()" style="color:black" name="AltaP" value="Pedir" >
+			<input type="button" class="btn btn-default" ng-click="Volver()" style="color:black" name="Volver" value="Volver" ><br><br>
+
+		</center>
+	</form>
+</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

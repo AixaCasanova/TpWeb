@@ -1,0 +1,48 @@
+
+	<center><h3 style="background-color:white; opacity:0.7;">Encuesta de satisfaccion</h3></center>
+
+	<form id="frm" name="frm" style="background-color:white; opacity:0.7;" >	 
+		<li>Tuvo problemas para realizar el pedido?
+		Si: <input type="radio" name="problemasPRealizarPNew" ng-model="problemasPRealizarPNew" value="Si" required>
+		No: <input type="radio" name="problemasPRealizarPNew" ng-model="problemasPRealizarPNew" value="No" required></li>
+		<br>
+		<li>la descripcion de los productos fue clara?
+		Si: <input type="radio" name="descripcionClaraNew" ng-model="descripcionClaraNew" value="Si" required>
+		No: <input type="radio" name="descripcionClaraNew" ng-model="descripcionClaraNew" value="No" required></li>
+		<br>
+		<li>Como llego a nosotros? 
+		<select ng-model="ComoLlego" required>
+			<option>Internet</option>
+			<option>TV</option>
+			<option>Otros</option>
+		</select></li>
+		 
+
+		<li>ya adquirio nuestros 
+
+		productos anteriormente?
+		Si: <input type="radio" name="PregAdquirioOld" ng-model="PregAdquirioOld" value="Si" required>
+		No: <input type="radio" name="PregAdquirioOld" ng-model="PregAdquirioOld" value="No" required></li>
+		<br>
+		(en caso de que nunca haya realizado una compra seleccionar n/a)<br>
+		<li>tiempo de entrega:
+		Bueno: <input type="radio" name="tiempoEntregaOld" ng-model="tiempoEntregaOld" value="Bueno" required>
+		Regular: <input type="radio" name="tiempoEntregaOld" ng-model="tiempoEntregaOld" value="Regular" required>
+		Malo: <input type="radio" name="tiempoEntregaOld" ng-model="tiempoEntregaOld" value="Malo" required>
+		n/a: <input type="radio" name="tiempoEntregaOld" ng-model="tiempoEntregaOld" value="noAplica" required></li>
+		<br>
+		<li>calidad del producto:
+		Bueno: <input type="radio" name="calidadProductoOld" ng-model="calidadProductoOld" value="Bueno" required>
+		Regular: <input type="radio" name="calidadProductoOld" ng-model="calidadProductoOld" value="Regular" required>
+		Malo: <input type="radio" name="calidadProductoOld" ng-model="calidadProductoOld" value="Malo" required>
+		n/a: <input type="radio" name="calidadProductoOld"  ng-model="calidadProductoOld" value="noAplica" required></li>
+		<br>
+		<li>calidad de atencion:
+		Bueno: <input type="radio" name="calidadAtencionOld" ng-model="calidadAtencionOld" value="Bueno" required>
+		Regular: <input type="radio" name="calidadAtencionOld" ng-model="calidadAtencionOld" value="Regular" required>
+		Malo: <input type="radio" name="calidadAtencionOld" ng-model="calidadAtencionOld" value="Malo" required>
+		n/a: <input type="radio" name="calidadAtencionOld" ng-model="calidadAtencionOld" value="noAplica" required></li>
+		<br>
+	  
+		<center><input type="button" name="enviar" ng-click="guardarEncuesta()" value="enviar"></center>
+	</form>

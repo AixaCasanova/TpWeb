@@ -1,0 +1,40 @@
+<div ng-if="ver==true">
+	 <form id="frm" name="frm">
+		<div> 
+			<h3>Pedido</h3>
+			<div ng-if="ver==true">
+
+			<b>Fecha de entrega/reserva:</b><input type="date" ng-model="fechasEntrega" ng-change="Formatear(fechasEntrega)"  name="fechasEntrega1" min={{fechamas2d}} max={{fechamas5d}} required><br><br>
+		 
+
+		 <div style="width: 68%; float:left; height: 100%">
+		 
+		      <b>Sucursal:</b>  
+				 <select ng-model="SucEleg">
+				
+				  <option ng-repeat="s in Lsucursales" value={{s.nombre}}>{{s.nombre}}</option>
+				</select><br><br>
+
+		      <input type="button" ng-click="VerRecorrido(SucEleg)" value="VerRecorrido">
+
+
+			   	<div ui-grid="gridOptionsPedidos" class="myGrid"></div><br><br>
+			   	<center><h3>Productos elegidos</h3></center><br> 
+			   	<div ui-grid="gridOptionsMisProdSel" class="myGrid"></div><br><br>
+		 
+
+
+			   	<input type="button" ng-disabled="(longListaP < 1) && frm.fechasEntrega1.$invalid" class="btn btn-default" name="modificar" value="Modificar" ng-click="ModificarPedido(SucEleg,fechasEntrega)">
+			   	<input type="button" class="btn btn-default" name="volver" ng-click=Volver() value="Volver">
+		      <div ng-if="(longListaP < 1) " style="color:red; background-color:white;opacity:0.7">* Debe agregar algun producto !</div>
+		      <div ng-if="frm.fechasEntrega1.$invalid" style="color:red; background-color:white;opacity:0.7">* Fecha invalida ! el pedido reserva del cliente  de ser con no menos de dos días de anticipación y no máximo de 5 días </div>
+		   	</div>
+		   	<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+		</div>
+		</div>
+
+	</form>
+</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

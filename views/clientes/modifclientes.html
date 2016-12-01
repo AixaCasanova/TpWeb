@@ -1,0 +1,24 @@
+<div ng-if="ver==true" id="divlogin">
+	<form id="frm" name="frm">
+		<center>
+
+			Nombre: <input type="text" name="nombre" ng-model="usuario.nombre" ><br><br>
+			Apellido:<input type="text" name="apellido" ng-model="usuario.apellido" ><br><br>
+			Direccion:<input type="text" name="direcion" ng-model="usuario.dir" ><br><br>
+			Mail:<input type="mail" name="mail" ng-model="usuario.mail" style="background-color:#9A9696"  disabled><br><br>
+			Telefono:<input type="number" name="telefono" ng-model="usuario.tel" ><br><br>
+			Password:<input type="password" name="password" ng-model="usuario.pass" ><br><br>
+			Estado:<select ng-model="usuario.estado" >
+				<option value="H">Habilitado</option>
+			 	<option value="D">Deshabilitado</option>
+			</select><br><br> 
+			<input type="button" class="btn btn-default" ng-click="ModifC()" style="color:black" name="ModifC" value="Modificar" >
+			<input type="button" class="btn btn-default" ng-click="Volver()" style="color:black" name="Volver" value="Volver" ><br><br>
+
+		</center>
+	</form>
+</div>
+
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+    

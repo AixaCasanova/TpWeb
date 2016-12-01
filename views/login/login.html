@@ -1,0 +1,46 @@
+	 
+
+	<form id="frm" name="frm">
+<center>
+		<div ng-if="ver==true" id="divlogin">  
+			<div class="login">
+				<h1 >Login</h1> 
+				  Mail: <input type="mail" style="color:black" name="mail" ng-model="usuario.mail" placeholder="mail" required><span style="color:red" ng-if="frm.mail.$invalid">*</span><br><br>
+				  Nombre: <input type="text" style="color:black" name="nombre" ng-model="usuario.nombre" placeholder="Nombre" required><span style="color:red" ng-if="frm.nombre.$invalid">*</span><br><br>
+				  Password: <input type="password" style="color:black" name="pass" ng-model="usuario.password" required><span style="color:red" ng-if="frm.pass.$invalid">*</span><br><br>
+
+				<input  type="button" class="btn btn-warning" ng-click="loguer()" style="color:black" name="Loguearse" value="Loguearse"  ng-disabled="frm.dni.$invalid || frm.pass.$invalid"> 
+
+				<br><br>	
+				<center>Si no estas registrado:</center>
+				<input type="button" class="btn btn-default" ui-sref="Registrarse" style="color:black" name="Registrarse" value="Registrarse"><br><br>
+	  			<input   type="button" class="btn btn-default" ng-click="Test('administrador','H')" style="color:black" name="TestAdmin" value="TestAdmin Habilitado"  > 
+	  			<input  type="button" class="btn btn-default" ng-click="Test('vendedor','H')" style="color:black" name="TestEmpleado" value="TestEmpleado Habilitado"><br>
+	  			<input type="button" class="btn btn-default" ng-click="Test('comprador','H')" style="color:black" name="TestCliente" value="TestCliente Habilitado">  
+	  			<input  type="button" class="btn btn-default" ng-click="Test('encargado','H')" style="color:black" name="Testencargado" value="TestEncargado Habilitado"> <br><br>
+	  			<input  type="button" class="btn btn-default" ng-click="Test('administrador','D')" style="color:black" name="TestAdmin" value="TestAdmin DesHabilitado"  > 
+	  			<input   type="button" class="btn btn-default" ng-click="Test('vendedor','D')" style="color:black" name="TestEmpleado" value="TestEmpleado DesHabilitado"><br>
+	  			<input  type="button" class="btn btn-default" ng-click="Test('comprador','D')" style="color:black" name="TestCliente" value="TestCliente DesHabilitado">  
+	  			<input c type="button" class="btn btn-default" ng-click="Test('encargado','D')" style="color:black" name="Testencargado" value="TestEncargado DesHabilitado"> 
+			</div>
+
+			
+			
+		</div>
+
+		<div ng-if ="ver!=true">
+		<br><br>
+		  <input type='button' style="color:black" class="btn btn-warning" value='desloguear'  ng-click="Desloguear()"> <br><br>
+		  </div> 
+		  
+	 
+
+ <br><br>
+ 
+ 
+ 			 
+ </center>
+
+ 
+
+	</form>

@@ -1,0 +1,49 @@
+<div ng-if="ver==true">
+	<center><h3>Estadisticas</h3>
+		<table><th>
+	<nav style="background-color:white; opacity:0.7;">
+		<ul style="width:50">
+		<strong>
+
+			<li><button ng-click="verE1()">Ventas por local</button></a></li>
+			<li><button ng-click="verE2()">ventas por local y empleado.</button></li>
+			<li><button ng-click="verE3()">clientes y sus compras</button> </li>
+			<li><button ng-click="verE4()">importes por dia de trabajo.</button></li>
+			<li><button ng-click="verE5()">producto más vendido entre dos fechas.</button> </li>
+			<li><button ng-click="verE6()">logins con el usuario con fecha y hora.</button></li>
+			<li><button ng-click="verE7()">estadísticas de las encuestas de satisfacción.</button> </li>
+
+		</strong>
+		</ul>
+		</th></table>
+	</nav>
+	</center>
+
+	<div ng-if="ver1">
+		<div ui-grid="gridOptionsE1" class="myGrid"></div>
+	</div>
+	<div ng-if="ver2">
+		<div ui-grid="gridOptionsE2" class="myGrid"></div>
+	</div>
+	<div ng-if="ver3">
+		<div ui-grid="gridOptionsE3" class="myGrid"></div>
+	</div>
+	<div ng-if="ver4">
+		<div ui-grid="gridOptionsE4" class="myGrid"></div>
+	</div>
+	<div ng-if="ver5">
+		<div ui-grid="gridOptionsE5" class="myGrid"></div>
+	</div>
+	<div ng-if="ver6">
+		<div ui-grid="gridOptionsE6" class="myGrid"></div>
+	</div>
+	<div ng-if="ver7">
+		<div ui-grid="gridOptionsE7" class="myGrid"></div>
+	</div>
+	 
+	<div style="background-color:white; opacity:0.9;">
+	<canvas id="myChart" width=50 height=50></canvas>
+	</div>
+
+<div ng-if="ver!=true" id="divlogin"><center><h1>Se debe loguear!!</h1></center></div>
+  
